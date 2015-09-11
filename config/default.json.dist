@@ -1,0 +1,12 @@
+{
+  "realm": "http://localhost:3000",
+  "cache": {
+    "view": false
+  },
+  "session": {
+    "secret": "mySecretSessionKey"
+  },
+  "steam": {
+    "apiKey": "mySteamApiKey"
+  }
+}
