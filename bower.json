@@ -5,5 +5,10 @@
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.13.4",
+    "bootstrap": "~3.3.5",
+    "html5shiv": "~3.7.3"
+  }
 }
