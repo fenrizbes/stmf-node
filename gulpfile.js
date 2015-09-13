@@ -8,7 +8,7 @@ gulp.task('develop', function () {
   livereload.listen();
   nodemon({
     script: 'bin/www',
-    ext: 'js swig coffee',
+    ext: 'js swig css',
     stdout: false
   }).on('readable', function () {
     this.stdout.on('data', function (chunk) {

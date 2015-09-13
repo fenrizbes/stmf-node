@@ -1,10 +1,14 @@
 {% extends 'layout.swig' %}
 
 {% block content %}
-  <div class="jumbotron">
-    <div class="container">
-      <p>
-        <a class="btn btn-primary btn-lg" href="/auth">Go auth</a>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>title.</h1>
+
+      <p>some text information.</p>
+
+      <p class="text-center">
+        just <a href="/auth"><img src="http://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png" alt="sign in through steam" /></a>.
       </p>
     </div>
   </div>

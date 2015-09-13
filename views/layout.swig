@@ -22,17 +22,19 @@
 </head>
 <body>
   <div class="site-wrapper">
-    <header class="header">
+    <header>
+      <strong>stea<span class="text-success">meter</span>.</strong>
     </header>
 
     <div class="site-content">
-      <div class="page-content">
-        {% block content %}{% endblock %}
-      </div>
+      {% block content %}{% endblock %}
     </div>
-
-    <footer class="footer">
-    </footer>
   </div>
+
+  <footer>
+    <div class="pull-right">
+      powered by <a href="http://steampowered.com" target="_blank">steam</a>.
+    </div>
+  </footer>
 </body>
 </html>
