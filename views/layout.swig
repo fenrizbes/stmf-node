@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/style.css">
 
-  <script type="text/javascript" src="/components/angular/angular.js"></script>
-  <script type="text/javascript" src="/components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script type="text/javascript" src="/components/angular/angular.min.js"></script>
 
   <!--[if lt IE 10]>
     <script type="text/javascript" src="/components/html5shiv/dist/html5shiv.min.js"></script>
@@ -27,7 +26,11 @@
     </header>
 
     <div class="site-content">
-      {% block content %}{% endblock %}
+      <div class="container">
+        <div class="jumbotron">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
     </div>
   </div>
 

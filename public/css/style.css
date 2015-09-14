@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  background: #101010;
+  background: #1a202c;
   font-family: monospace;
 }
 
@@ -29,7 +29,11 @@ header {
 }
 
 .jumbotron {
-  background: #151515;
+  background: #2a303c;
+}
+
+.jumbotron h2 {
+  vertical-align: bottom;
 }
 
 footer {
