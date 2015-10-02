@@ -50,3 +50,8 @@ a:visited,
 .text-success {
   color: #a4d007;
 }
+
+.score-main {
+  font-size: 46px;
+  font-weight: bold;
+}
