@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="stmtr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <script type="text/javascript" src="/components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/js/common.js"></script>
 
   <!--[if lt IE 10]>
     <script type="text/javascript" src="/components/html5shiv/dist/html5shiv.min.js"></script>

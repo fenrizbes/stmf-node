@@ -11,9 +11,10 @@ body {
 }
 
 .site-wrapper {
-  height: 100%;
+  min-height: 100%;
   width: 960px;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 .site-content .container {
