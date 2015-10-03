@@ -3,7 +3,7 @@ var http = require('http');
 var SteamApi = function(apiKey, userId) {
   this.apiKey = apiKey;
   this.userId = userId;
-  this.host   = 'api.steampowered.com';
+  this.host   = 'http://api.steampowered.com';
   this.path   = {
     games:  '/IPlayerService/GetOwnedGames/v0001/?key=',
     global: '/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?key=',
@@ -11,31 +11,42 @@ var SteamApi = function(apiKey, userId) {
   };
 };
 
-SteamApi.prototype.sendRequest = function(type, data, callback) {
+SteamApi.prototype.sendRequest = function(type, data, success, fail) {
   var path = this.path[type] + this.apiKey;
   for (var i in data) {
     path += '&'+ i +'='+ data[i];
   }
 
-  http.request({
-    hostname: this.host,
-    path:     path
-  }, callback).end();
+  http
+    .get(this.host + path, function(res) {
+      var data = '';
+
+      res
+        .on('data', function(chunk) {
+          data += chunk;
+        })
+        .on('end', function() {
+          success(JSON.parse(data));
+        })
+      ;
+    })
+    .on('error', fail)
+  ;
 };
 
-SteamApi.prototype.getGames = function(callback) {
-  this.sendRequest('games', { steamid: this.userId }, callback);
+SteamApi.prototype.getGames = function(success, fail) {
+  this.sendRequest('games', { steamid: this.userId }, success, fail);
 };
 
-SteamApi.prototype.getGlobalAchievements = function(id, callback) {
-  this.sendRequest('global', { gameid: id }, callback);
+SteamApi.prototype.getGlobalAchievements = function(id, success, fail) {
+  this.sendRequest('global', { gameid: id }, success, fail);
 };
 
-SteamApi.prototype.getPlayerAchievements = function(id, callback) {
+SteamApi.prototype.getPlayerAchievements = function(id, success, fail) {
   this.sendRequest('games', {
     appid:   id,
     steamid: this.userId
-  }, callback);
+  }, success, fail);
 };
 
 module.exports = SteamApi;

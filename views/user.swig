@@ -7,7 +7,7 @@
     </h2>
 
     <p>
-      <span class="text-success score-main">3567</span>.1234
+      <span class="text-success score-main">0</span>.0
       s<span class="text-success">m</span>.
     </p>
 {% endblock %}

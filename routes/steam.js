@@ -15,8 +15,9 @@ router.get('/*', function(req, res, next) {
 
 router.get('/games', function(req, res, next) {
   req.steamApi.getGames(function(data) {
-    //console.log(data);
-    res.json(null);
+    res.json(data.response);
+  }, function(error) {
+    res.json(error);
   });
 });
 
