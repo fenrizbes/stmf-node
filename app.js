@@ -13,6 +13,7 @@ var passport = require('passport');
 // routes
 var home = require('./routes/home');
 var auth = require('./routes/auth');
+var steam = require('./routes/steam');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use(passport.session());
 
 app.use('/', home);
 app.use('/auth', auth);
+app.use('/steam', steam);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
